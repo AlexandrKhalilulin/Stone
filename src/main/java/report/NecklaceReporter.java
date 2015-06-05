@@ -20,5 +20,6 @@ public class NecklaceReporter {
         System.out.println("Stone in range by transparency is:");
         for (Stone list : stonesInRangeTransparency)
             System.out.println(list);
+        if (stonesInRangeTransparency.size() == 0) System.out.println("Nothing");
     }
 }

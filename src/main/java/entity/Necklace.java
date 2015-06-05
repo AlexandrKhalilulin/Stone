@@ -16,8 +16,7 @@ public class Necklace {
     }
 
     public List<Stone> getStones() {
-        List<Stone> stones = this.stones;
-        return stones;
+        return new ArrayList<Stone>(stones);
     }
 
     public void setStones(List<Stone> stones) {

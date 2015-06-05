@@ -28,4 +28,7 @@ public class PreciousStone extends Stone {
     }
 
 
+    public int compare(Stone o1, Stone o2) {
+        return 0;
+    }
 }

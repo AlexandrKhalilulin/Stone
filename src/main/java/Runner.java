@@ -1,5 +1,6 @@
 import entity.Necklace;
 import entity.NecklaceFactory;
+import entity.Stone;
 import report.NecklaceReporter;
 
 import java.util.Collections;
@@ -12,7 +13,8 @@ public class Runner {
         Necklace necklace = NecklaceFactory.createNecklace("Necklace1");
         NecklaceReporter.reportWeight(necklace);
         NecklaceReporter.reportPrice(necklace);
-        Collections.sort(necklace.getStones());
+        Collections.sort(necklace.getStones(), Stone.Name_Order);
+        //Collections.sort(necklace.getStones(), Stone.Price_Order);
         NecklaceReporter.reportByTransparency(necklace);
     }
 }

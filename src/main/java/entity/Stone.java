@@ -1,10 +1,18 @@
 package entity;
 
-public abstract class Stone implements Comparable<Stone> {
+import java.util.Comparator;
+
+public abstract class Stone {
     private double weight;
     private double price;
     private double transparency;
     private String name;
+
+    public static Comparator<Stone> Name_Order = new Comparator<Stone>() {
+        public int compare(Stone s1, Stone s2) {
+            return s1.name.compareTo(s2.name);
+        }
+    };
 
     public Stone() {
     }
@@ -14,6 +22,8 @@ public abstract class Stone implements Comparable<Stone> {
         this.weight = weight;
         this.price = price;
         this.transparency = transparency;
+
+
     }
 
     public String getName() {
@@ -48,7 +58,4 @@ public abstract class Stone implements Comparable<Stone> {
         this.transparency = transparency;
     }
 
-    public int compareTo(Stone other) {
-        return Double.compare(getPrice(), other.getPrice());
-    }
 }

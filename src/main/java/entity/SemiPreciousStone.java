@@ -25,5 +25,9 @@ public class SemiPreciousStone extends Stone {
                 ", tracery=" + tracery +
                 '}';
     }
+
+    public int compare(Stone o1, Stone o2) {
+        return 0;
+    }
 }
 
