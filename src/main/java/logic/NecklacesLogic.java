@@ -17,6 +17,7 @@ public class NecklacesLogic {
             if (list.getTransparency() >= min && list.getTransparency() <= max)
                 stonesByTransparency.add(list);
         }
+
         return stonesByTransparency;
     }
 

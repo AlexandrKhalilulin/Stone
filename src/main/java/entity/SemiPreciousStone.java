@@ -18,16 +18,19 @@ public class SemiPreciousStone extends Stone {
     @Override
     public String toString() {
         return "SemiPreciousStone{" +
-                "name='" + getName() + '\'' +
+                "id='" + super.getId() + '\'' +
+                ", name='" + getName() + '\'' +
                 ", weight=" + getWeight() +
                 ", price=" + getPrice() +
                 ", transparency=" + getTransparency() +
                 ", tracery=" + tracery +
+                ", polish=" + makePolish() +
                 '}';
     }
 
-    public int compare(Stone o1, Stone o2) {
-        return 0;
+    @Override
+    public String makePolish() {
+        return "Rose";
     }
 }
 

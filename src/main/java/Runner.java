@@ -4,6 +4,7 @@ import entity.Stone;
 import report.NecklaceReporter;
 
 import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * Created by Alexandr on 22.05.2015.
@@ -14,7 +15,8 @@ public class Runner {
         NecklaceReporter.reportWeight(necklace);
         NecklaceReporter.reportPrice(necklace);
         Collections.sort(necklace.getStones(), Stone.Name_Order);
-        //Collections.sort(necklace.getStones(), Stone.Price_Order);
+        Collections.sort(necklace.getStones(), Comparator.comparing(Stone::getPrice));
         NecklaceReporter.reportByTransparency(necklace);
+        NecklaceReporter.reportNeclace(necklace);
     }
 }

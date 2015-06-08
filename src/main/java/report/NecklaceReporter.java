@@ -22,4 +22,8 @@ public class NecklaceReporter {
             System.out.println(list);
         if (stonesInRangeTransparency.size() == 0) System.out.println("Nothing");
     }
+
+    public static void reportNeclace(Necklace necklace) {
+        System.out.println(necklace);
+    }
 }
