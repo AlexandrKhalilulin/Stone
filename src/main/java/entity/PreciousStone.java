@@ -2,8 +2,6 @@ package entity;
 
 import org.joda.money.Money;
 
-import java.util.UUID;
-
 public class PreciousStone extends Stone {
     private double hardness;
 
