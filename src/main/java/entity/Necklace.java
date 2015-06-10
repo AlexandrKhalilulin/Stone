@@ -2,12 +2,12 @@ package entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class Necklace {
-    private static int ID = 0;
+    private UUID UUID;
     private List<Stone> stones;
     private String name;
-    private int id;
 
     public Necklace() {
     }
@@ -15,11 +15,11 @@ public class Necklace {
     public Necklace(String name, List<Stone> stones) {
         this.name = name;
         this.stones = stones;
-        this.id = ID++;
+        this.UUID = UUID.randomUUID();
     }
 
-    public int getId() {
-        return id;
+    public java.util.UUID getUUID() {
+        return UUID;
     }
 
     public List<Stone> getStones() {
@@ -39,30 +39,9 @@ public class Necklace {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Necklace)) return false;
-
-        Necklace necklace = (Necklace) o;
-
-        if (id != necklace.id) return false;
-        if (!stones.equals(necklace.stones)) return false;
-        return name.equals(necklace.name);
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = stones.hashCode();
-        result = 31 * result + name.hashCode();
-        result = 31 * result + id;
-        return result;
-    }
-
-    @Override
     public String toString() {
         return "Necklace{" +
-                "id='" + id + '\'' +
+                "UUID='" + UUID + '\'' +
                 ", name='" + name + '\'' +
                 ", stones=" + getStones() +
                 '}';

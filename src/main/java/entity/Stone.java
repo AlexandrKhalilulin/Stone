@@ -1,9 +1,11 @@
 package entity;
 
 import java.util.Comparator;
+import java.util.UUID;
 
 public abstract class Stone implements Polish {
-    private static int ID = 0;
+
+    private UUID UUID;
     private double weight;
     private double price;
     private double transparency;
@@ -13,7 +15,6 @@ public abstract class Stone implements Polish {
             return s1.name.compareTo(s2.name);
         }
     };
-    private int id;
 
     public Stone() {
     }
@@ -23,7 +24,12 @@ public abstract class Stone implements Polish {
         this.weight = weight;
         this.price = price;
         this.transparency = transparency;
-        this.id = ID++;
+        this.UUID = UUID.randomUUID();
+
+    }
+
+    public java.util.UUID getUUID() {
+        return UUID;
     }
 
     public String getName() {
@@ -58,37 +64,4 @@ public abstract class Stone implements Polish {
         this.transparency = transparency;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Stone)) return false;
-
-        Stone stone = (Stone) o;
-
-        if (Double.compare(stone.weight, weight) != 0) return false;
-        if (Double.compare(stone.price, price) != 0) return false;
-        if (Double.compare(stone.transparency, transparency) != 0) return false;
-        if (id != stone.id) return false;
-        return name.equals(stone.name);
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result;
-        long temp;
-        temp = Double.doubleToLongBits(weight);
-        result = (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(price);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(transparency);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        result = 31 * result + name.hashCode();
-        result = 31 * result + id;
-        return result;
-    }
 }

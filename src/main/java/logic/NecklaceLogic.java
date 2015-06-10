@@ -1,6 +1,5 @@
 package logic;
 
-import console.ConsoleLogic;
 import entity.Necklace;
 import entity.Stone;
 
@@ -9,14 +8,10 @@ import java.util.List;
 
 public class NecklaceLogic {
 
-    public static List<Stone> searchStonesByTransparency(Necklace necklace) {
+    public static List<Stone> searchStonesByTransparency(Necklace necklace, int min_Transparency, int max_Transparency) {
         List<Stone> stonesByTransparency = new ArrayList<Stone>();
-        System.out.println("Enter lower range of transparency:");
-        double min = ConsoleLogic.inputDouble();
-        System.out.println("Enter high range of transparency:");
-        double max = ConsoleLogic.inputDouble();
         for (Stone list : necklace.getStones()) {
-            if (list.getTransparency() >= min && list.getTransparency() <= max)
+            if (list.getTransparency() >= min_Transparency && list.getTransparency() <= max_Transparency)
                 stonesByTransparency.add(list);
         }
         return stonesByTransparency;

@@ -18,7 +18,7 @@ public class SemiPreciousStone extends Stone {
     @Override
     public String toString() {
         return "SemiPreciousStone{" +
-                "id='" + super.getId() + '\'' +
+                "UUID='" + getUUID() + '\'' +
                 ", name='" + getName() + '\'' +
                 ", weight=" + getWeight() +
                 ", price=" + getPrice() +
