@@ -1,5 +1,9 @@
 package entity;
 
+import org.joda.money.CurrencyUnit;
+import org.joda.money.Money;
+
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +30,7 @@ public class StoneFactory {
         double weight = (double) Math.random() * Max_Weight;
         double transparency = Math.random() * Max_Transparency;
         double hardness = Math.random() * Max_Hardness;
-        double price = weight * transparency * hardness;
+        Money price = Money.of(CurrencyUnit.EUR, weight * transparency * hardness, RoundingMode.UP);
         Stone stone = new PreciousStone(name, weight, price, transparency, hardness);
         return stone;
     }
@@ -36,7 +40,7 @@ public class StoneFactory {
         double weight = (double) Math.random() * Max_Weight;
         double transparency = Math.random() * Max_Transparency;
         double tracery = Math.random() * Max_Tracery;
-        double price = weight * transparency * tracery;
+        Money price = Money.of(CurrencyUnit.EUR, weight * transparency * tracery, RoundingMode.UP);
         Stone stone = new SemiPreciousStone(name, weight, price, transparency, tracery);
         return stone;
     }

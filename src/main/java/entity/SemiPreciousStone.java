@@ -1,9 +1,11 @@
 package entity;
 
+import org.joda.money.Money;
+
 public class SemiPreciousStone extends Stone {
     private double tracery;
 
-    public SemiPreciousStone(String name, double weight, double price, double transparency, double tracery) {
+    public SemiPreciousStone(String name, double weight, Money price, double transparency, double tracery) {
         super(name, weight, price, transparency);
         this.tracery = tracery;
     }
@@ -18,7 +20,7 @@ public class SemiPreciousStone extends Stone {
     @Override
     public String toString() {
         return "SemiPreciousStone{" +
-                "UUID='" + getUUID() + '\'' +
+                "UUID='" + getUUID().getMostSignificantBits() + '\'' +
                 ", name='" + getName() + '\'' +
                 ", weight=" + getWeight() +
                 ", price=" + getPrice() +

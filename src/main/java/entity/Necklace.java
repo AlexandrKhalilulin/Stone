@@ -1,5 +1,8 @@
 package entity;
 
+import org.joda.money.CurrencyUnit;
+import org.joda.money.Money;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -56,10 +59,10 @@ public class Necklace {
         return weight;
     }
 
-    public double necklacePrice() {
-        double price = 0;
+    public Money necklacePrice() {
+        Money price = Money.of(CurrencyUnit.EUR, 0);
         for (Stone list : getStones()) {
-            price += list.getPrice();
+            price = price.plus(list.getPrice());
         }
         return price;
     }

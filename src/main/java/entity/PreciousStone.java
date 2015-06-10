@@ -1,9 +1,13 @@
 package entity;
 
+import org.joda.money.Money;
+
+import java.util.UUID;
+
 public class PreciousStone extends Stone {
     private double hardness;
 
-    public PreciousStone(String name, double weight, double price, double transparency, double hardness) {
+    public PreciousStone(String name, double weight, Money price, double transparency, double hardness) {
         super(name, weight, price, transparency);
         this.hardness = hardness;
     }
@@ -19,7 +23,7 @@ public class PreciousStone extends Stone {
     @Override
     public String toString() {
         return "PreciousStone{" +
-                "UUID='" + getUUID() + '\'' +
+                "UUID='" + getUUID().getMostSignificantBits() + '\'' +
                 ", name='" + getName() + '\'' +
                 ", weight=" + getWeight() +
                 ", price=" + getPrice() +

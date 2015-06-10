@@ -1,5 +1,7 @@
 package entity;
 
+import org.joda.money.Money;
+
 import java.util.Comparator;
 import java.util.UUID;
 
@@ -7,7 +9,7 @@ public abstract class Stone implements Polish {
 
     private UUID UUID;
     private double weight;
-    private double price;
+    private Money price;
     private double transparency;
     private String name;
     public static Comparator<Stone> Name_Order = new Comparator<Stone>() {
@@ -19,7 +21,7 @@ public abstract class Stone implements Polish {
     public Stone() {
     }
 
-    public Stone(String name, double weight, double price, double transparency) {
+    public Stone(String name, double weight, Money price, double transparency) {
         this.name = name;
         this.weight = weight;
         this.price = price;
@@ -48,11 +50,11 @@ public abstract class Stone implements Polish {
         this.weight = weight;
     }
 
-    public double getPrice() {
+    public Money getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Money price) {
         this.price = price;
     }
 
