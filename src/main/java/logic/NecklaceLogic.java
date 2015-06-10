@@ -7,7 +7,7 @@ import entity.Stone;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NecklacesLogic {
+public class NecklaceLogic {
 
     public static List<Stone> searchStonesByTransparency(Necklace necklace) {
         List<Stone> stonesByTransparency = new ArrayList<Stone>();

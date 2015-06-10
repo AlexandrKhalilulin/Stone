@@ -2,7 +2,7 @@ package report;
 
 import entity.Necklace;
 import entity.Stone;
-import logic.NecklacesLogic;
+import logic.NecklaceLogic;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class NecklaceReporter {
     }
 
     public static void reportByTransparency(Necklace necklace) {
-        List<Stone> stonesInRangeTransparency = NecklacesLogic.searchStonesByTransparency(necklace);
+        List<Stone> stonesInRangeTransparency = NecklaceLogic.searchStonesByTransparency(necklace);
         System.out.println("Stone in range by transparency is:");
         for (Stone list : stonesInRangeTransparency)
             System.out.println(list);

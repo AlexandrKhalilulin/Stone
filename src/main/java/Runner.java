@@ -6,9 +6,6 @@ import report.NecklaceReporter;
 import java.util.Collections;
 import java.util.Comparator;
 
-/**
- * Created by Alexandr on 22.05.2015.
- */
 public class Runner {
     public static void main(String[] args) {
         Necklace necklace = NecklaceFactory.createNecklace("Necklace1", 3, 3);
