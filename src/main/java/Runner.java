@@ -11,7 +11,7 @@ import java.util.Comparator;
  */
 public class Runner {
     public static void main(String[] args) {
-        Necklace necklace = NecklaceFactory.createNecklace("Necklace1");
+        Necklace necklace = NecklaceFactory.createNecklace("Necklace1", 3, 3);
         NecklaceReporter.reportWeight(necklace);
         NecklaceReporter.reportPrice(necklace);
         Collections.sort(necklace.getStones(), Stone.Name_Order);

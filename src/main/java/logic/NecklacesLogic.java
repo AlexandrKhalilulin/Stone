@@ -11,14 +11,14 @@ public class NecklacesLogic {
 
     public static List<Stone> searchStonesByTransparency(Necklace necklace) {
         List<Stone> stonesByTransparency = new ArrayList<Stone>();
-        double min = ConsoleLogic.inputMinValueTransparency();
-        double max = ConsoleLogic.inputMaxValueTransparency();
+        System.out.println("Enter lower range of transparency:");
+        double min = ConsoleLogic.inputDouble();
+        System.out.println("Enter high range of transparency:");
+        double max = ConsoleLogic.inputDouble();
         for (Stone list : necklace.getStones()) {
             if (list.getTransparency() >= min && list.getTransparency() <= max)
                 stonesByTransparency.add(list);
         }
-
         return stonesByTransparency;
     }
-
 }
