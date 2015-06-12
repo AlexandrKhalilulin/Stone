@@ -18,9 +18,5 @@ public class Runner {
         logger.info("Necklace weight is: {}", String.valueOf(necklace.necklaceWeight()));
         Collections.sort(necklace.getStones(), Comparator.comparing(Stone::getUUID));
         logger.info("Stone in range by transparency is: {}", String.valueOf(NecklaceLogic.searchStonesByTransparency(necklace)));
-        for (Stone list : necklace.getStones()) {
-            System.out.println(list);
-
         }
-    }
 }
