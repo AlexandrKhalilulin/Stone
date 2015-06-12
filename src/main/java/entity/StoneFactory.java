@@ -16,17 +16,16 @@ public class StoneFactory {
     public static List<Stone> createStones(int countPrecious, int countSemiPrecious) {
         List<Stone> stones = new ArrayList<Stone>();
         for (int i = 0; i < countPrecious; i++) {
-            stones.add(createPreciousStone(i));
+            stones.add(createPreciousStone("PreciousStone" + i));
         }
 
         for (int j = 0; j < countSemiPrecious; j++) {
-            stones.add(createSemiPreciousStone(j));
+            stones.add(createSemiPreciousStone("SemiPreciousStone" + j));
         }
         return stones;
     }
 
-    public static Stone createPreciousStone(int i) {
-        String name = "PreciousStone" + i;
+    public static Stone createPreciousStone(String name) {
         double weight = (double) Math.random() * Max_Weight;
         double transparency = Math.random() * Max_Transparency;
         double hardness = Math.random() * Max_Hardness;
@@ -35,8 +34,7 @@ public class StoneFactory {
         return stone;
     }
 
-    public static Stone createSemiPreciousStone(int j) {
-        String name = "SemiPreciousStone" + j;
+    public static Stone createSemiPreciousStone(String name) {
         double weight = (double) Math.random() * Max_Weight;
         double transparency = Math.random() * Max_Transparency;
         double tracery = Math.random() * Max_Tracery;
