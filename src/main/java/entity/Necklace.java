@@ -3,7 +3,6 @@ package entity;
 import org.joda.money.CurrencyUnit;
 import org.joda.money.Money;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -26,7 +25,7 @@ public class Necklace {
     }
 
     public List<Stone> getStones() {
-        return new ArrayList<Stone>(stones);
+        return stones;
     }
 
     public void setStones(List<Stone> stones) {

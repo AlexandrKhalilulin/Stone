@@ -14,7 +14,11 @@ public class Runner {
         Necklace necklace = NecklaceFactory.createNecklace("Necklace1");
         logger.info("Neclace price is: {}", String.valueOf(necklace.necklacePrice()));
         logger.info("Necklace weight is: {}", String.valueOf(necklace.necklaceWeight()));
-        Collections.sort(necklace.getStones(), Comparator.comparing(Stone::getUUID));
+        Collections.sort(necklace.getStones(), Comparator.comparing(Stone::getPrice));
+        for (Stone list : necklace.getStones()) {
+            logger.info(String.valueOf(list));
+        }
         logger.info("Stone in range by transparency is: {}", String.valueOf(NecklaceLogic.searchStonesByTransparency(necklace)));
+
     }
 }
